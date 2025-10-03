@@ -1,0 +1,37 @@
+#include <stdio.h>
+ 
+int main()
+{
+	int Array[10], Pos, i, n;
+	
+	printf("\n Please Enter Number of elements  :   ");
+	scanf("%d", &n);
+	
+	printf("\n Please Enter %d elements \n", n);
+	for (i = 0; i <n; i++)
+	{
+    	scanf("%d", &Array[i]);
+   	}     
+ 
+  	printf("\n Please Enter the location of a Element that you want to Delete  :  ");
+  	scanf("%d", &Pos);
+  	
+	if(Pos<= 0 || Pos> n)
+  	{
+  		printf("\n Please Enter a Valid Position between 1 and %d", n);
+  	}
+  	else
+  	{
+  		for (i = Pos-1; i < n; i++)
+   		{
+	    	Array[i] = Array[i + 1];
+   		}
+   		n--;
+	}
+ 	printf("\n Final one after Deleting is:\n");
+ 	for (i = 0; i < n; i++)
+  	{
+ 		printf("%d\t", Array[i]);
+  	}	     
+ 	return 0;
+}
